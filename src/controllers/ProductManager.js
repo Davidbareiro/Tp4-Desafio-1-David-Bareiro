@@ -40,11 +40,19 @@ class ProductManager {
         this.path = path;
     }
 
+    // VerificoExistencia = () => {
+ 
+    //      existsSync(this.path) && writeFileSync(this.path, "[]", "utf-8");
+    // };
+
+
+    /*
     VerificoExistencia = () => {
  
         !existsSync(this.path) && writeFileSync(this.path, "[]", "utf-8");
     };
 
+    */
 
 //Creo el producto
 async addProduct(newProduct) {
@@ -55,7 +63,7 @@ async addProduct(newProduct) {
         console.log("Complete los campos, no pueden estar vacio");
     } 
     else {
-        this.VerificoExistencia();
+        // this.VerificoExistencia();
         try {
       
             const read = await fs.readFile(this.path, "utf-8");
@@ -82,7 +90,7 @@ async addProduct(newProduct) {
 }
 
 async getProducts() {
-    this.VerificoExistencia();
+    // this.VerificoExistencia();
     try {
         const read = await fs.readFile(this.path, "utf-8");
         let data = JSON.parse(read);
@@ -94,7 +102,7 @@ async getProducts() {
 }
 
 async getProductById(id) {
-    this.VerificoExistencia();
+    // this.VerificoExistencia();
     try {
         const read = await fs.readFile(this.path, "utf-8");
         const data = JSON.parse(read);
@@ -112,7 +120,7 @@ async getProductById(id) {
 }
 
 async updateProduct(id, title, description, price, thumbnail, code, stock, category,  status) {
-    this.VerificoExistencia();
+    // this.VerificoExistencia();
     try {
         const read = await fs.readFile(this.path, "utf-8");
         const data = JSON.parse(read);
@@ -139,7 +147,7 @@ async updateProduct(id, title, description, price, thumbnail, code, stock, categ
 
 
 async deleteProduct(id) {
-    this.VerificoExistencia();
+    // this.VerificoExistencia();
     try {
         const read = await fs.readFile(this.path, "utf-8");
         const data = JSON.parse(read);
