@@ -5,7 +5,7 @@ class Products {
 
     constructor (title, description, price, code, stock, category, status, thumbnail)
     {
-        this.id = Incremento;
+        this.id = Products.Incremento;
         this.title  = title;
         this.description = description
         this.price = price
@@ -65,7 +65,7 @@ async addProduct(newProduct) {
                 throw "Codigo de producto existente, intente otro";
             } else 
              {
-                let newID = produ.Incremento();
+                let newID = Products.Incremento();
                 //!data.length ? (newID = 1) : (newID = data[data.length - 1].id + 1);
             
 
@@ -171,3 +171,7 @@ async CrearObjetos() {
 
     
 }// de la clase ProductManager
+
+
+// module.exports = { ProductManager }
+export default ProductManager;
